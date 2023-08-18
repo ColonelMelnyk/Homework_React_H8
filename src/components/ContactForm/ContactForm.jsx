@@ -10,17 +10,17 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
-  const isExistingName = contacts.some(
+  const isRealName = contacts.some(
     contact => contact.name.toLowerCase() === name.toLowerCase()
   );
 
-  const isExistingNumber = contacts.some(contact => contact.number === number);
+  const isRealNumber = contacts.some(contact => contact.number === number);
 
-  const handleSubmit = e => {
+  const onHandleSubmit = e => {
     e.preventDefault();
-    if (isExistingName) {
+    if (isRealName) {
       return alert(`Contact with name ${name} is already in contact`);
-    } else if (isExistingNumber) {
+    } else if (isRealNumber) {
       return alert(`Number ${number} is already in contact`);
     }
     dispatch(addContact({ name, number }));
@@ -36,9 +36,9 @@ export const ContactForm = () => {
         setName(value);
         break;
       case 'number':
-        const digitsOnly = value.replace(/\D/g, '');
-        const truncatedNumber = digitsOnly.slice(0, 10);
-        const formattedNumber = truncatedNumber.replace(
+        const digits = value.replace(/\D/g, '');
+        const truncNumber = digits.slice(0, 10);
+        const formattedNumber = truncNumber.replace(
           /(\d{3})(\d{3})(\d{4})/,
           '$1-$2-$3'
         );
@@ -52,7 +52,7 @@ export const ContactForm = () => {
   return (
     <div className={css.contacts_container}>
       <h1 className={css.contacts_title}>Phonebook</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onHandleSubmit}>
         <div>
           <label >
             <h2 className={css.contacts_input_title}>Name</h2>
