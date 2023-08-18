@@ -3,12 +3,14 @@
     padding: 10px;
     color: wheat;
     transition: all 500ms ease-out;
+    text-decoration: none;
 }
 .nav_login{
     border: 1.5px solid wheat;
     padding: 10px;
     color: wheat;
     transition: all 500ms ease-out;
+    text-decoration: none;
 }
 .nav_block{
     display: flex;
