@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import ContactList from 'components/ContactList/ContactList';
 import { Loader } from 'components/Loader/Loader';
-
+import css from '../components/ContactList/ContactList.module.css'
 const Contacts = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -18,9 +18,9 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <section >
+    <section className={css.contact_form_container}>
             <ContactForm />
-           <div>
+           <div className={css.contact_list_container}>
            <h2 >My contacts</h2>
             <Filter />
             {isLoading && !error ? <Loader /> : <ContactList />}

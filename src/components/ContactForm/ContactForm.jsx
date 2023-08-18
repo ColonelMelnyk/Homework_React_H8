@@ -50,19 +50,12 @@ export const ContactForm = () => {
   };
 
   return (
-    <div 
-    className={css.contacts_container}
-    >
-      <h1 
-     className={css.contacts_itle}
-      >Phonebook</h1>
-
-      <form
-        onSubmit={handleSubmit}
-      >
-        <div >
+    <div className={css.contacts_container}>
+      <h1 className={css.contacts_title}>Phonebook</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
           <label >
-            <h2 className="mb-1">Name</h2>
+            <h2 className={css.contacts_input_title}>Name</h2>
             <input
               type="text"
               name="name"
@@ -75,7 +68,7 @@ export const ContactForm = () => {
         </div>
         <div >
           <label>
-            <h2 >Number</h2>
+            <h2 className={css.contacts_input_title}>Number</h2>
             <input
               type="tel"
               name="number"
@@ -88,12 +81,7 @@ export const ContactForm = () => {
           </label>
         </div>
 
-        <button
-          type="submit"
-          className={css.submit_button}
-        >
-          ADD CONTACT
-        </button>
+        <button type="submit" className={css.submit_button}>Add new contact</button>
       </form>
     </div>
   );

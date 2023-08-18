@@ -2,18 +2,23 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid black;
-    border-radius: 5px;
+    border: none;
+    border-radius: 10px;
     background-color: #f9f9f9;
     margin-top: 50px;
     text-align: center;
-    background-color: rgb(255, 255, 150);
+    background-color: white;
+    color: black;
+    box-shadow: 40px 13px 152px -14px rgba(224,223,208,1);
   }
   .contacts_title {
     display: block;
     margin-bottom: 5px;
+    font-size: 24px;
   }
-  
+  .contacts_input_title{
+    font-size: 16px;
+  }
   .input_ {
     width: 100%;
     padding: 8px;
@@ -31,4 +36,10 @@
     cursor: pointer;
     font-size: 14px;
     margin-top: 15px;
+    font-size: 16px;
+    transition: all 500ms ease-out;
+  }
+
+  .submit_button:hover{
+    background-color: #0062cc;
   }

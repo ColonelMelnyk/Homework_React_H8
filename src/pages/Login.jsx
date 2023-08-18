@@ -3,9 +3,7 @@ import { LoginForm } from 'components/LoginForm/LoginForm';
 export default function Login() {
   return (
     <section>
-      <div 
-      // className="container container-content"
-      >
+      <div>
         <title>Login</title>
         <LoginForm />
       </div>
