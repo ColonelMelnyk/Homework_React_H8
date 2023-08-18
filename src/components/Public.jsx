@@ -4,6 +4,5 @@ import { selectIsLoggedIn } from 'redux/authorisation/AuthSelectors';
 
 export default function PublicRoute() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
   return isLoggedIn ? <Navigate to={'/contacts'} replace /> : <Outlet />;
 }
