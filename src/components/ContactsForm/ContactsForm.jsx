@@ -1,34 +1,31 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'redux/contacts/Operations';
+import { onHandleAddContact } from 'redux/contacts/Operations';
 import { selectContacts } from 'redux/contacts/Selector';
+import Notify from 'notiflix';
 import css from './Form.module.css'
-export const ContactForm = () => {
+export const ContactsForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-
   const isRealName = contacts.some(
     contact => contact.name.toLowerCase() === name.toLowerCase()
   );
-
   const isRealNumber = contacts.some(contact => contact.number === number);
-
   const onHandleSubmit = e => {
     e.preventDefault();
     if (isRealName) {
-      return alert(`Contact with name ${name} is already in contact`);
+      return Notify.failure(`Contact with name ${name} is present `);
     } else if (isRealNumber) {
-      return alert(`Number ${number} is already in contact`);
+      return Notify.failure(`Number ${number} is present`);
     }
-    dispatch(addContact({ name, number }));
+    dispatch(onHandleAddContact({ name, number }));
     setName('');
     setNumber('');
   };
 
-  const handleChange = e => {
+  const onHandleChange = e => {
     const { name, value } = e.target;
 
     switch (name) {
@@ -38,11 +35,11 @@ export const ContactForm = () => {
       case 'number':
         const digits = value.replace(/\D/g, '');
         const truncNumber = digits.slice(0, 10);
-        const formattedNumber = truncNumber.replace(
+        const formatNumber = truncNumber.replace(
           /(\d{3})(\d{3})(\d{4})/,
           '$1-$2-$3'
         );
-        setNumber(formattedNumber);
+        setNumber(formatNumber);
         break;
       default:
         return;
@@ -63,7 +60,7 @@ export const ContactForm = () => {
               title="Name may contain only letters, apostrophe, dash, and spaces. For example: Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
               value={name}
-              onChange={handleChange} />
+              onChange={onHandleChange} />
           </label>
         </div>
         <div >
@@ -76,7 +73,7 @@ export const ContactForm = () => {
               title="Phone number must be digits and must contain 10 numbers"
               required
               value={number}
-              onChange={handleChange}
+              onChange={onHandleChange}
             />
           </label>
         </div>

@@ -4,7 +4,7 @@ import css from './Register.module.css'
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  const onHandleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
@@ -18,7 +18,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form className={css.registration_container} onSubmit={handleSubmit} autoComplete="off">
+    <form className={css.registration_container} onSubmit={onHandleSubmit} autoComplete="off">
       <div className={css.input_}>
         <label>
         <p className={css.registration_label}>Username</p>
@@ -39,7 +39,7 @@ export const RegisterForm = () => {
           type="password" name="password" />
         </label>
       </div >
-      <button type="submit" className={css.register_button} >Registration</button>
+      <button type="submit" className={css.register_button}>Registration</button>
     </form>
   );
 };
