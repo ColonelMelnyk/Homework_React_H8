@@ -1,0 +1,19 @@
+.nav_home{
+    border: 1.5px solid wheat;
+    padding: 10px;
+    color: wheat;
+    margin-right: 16px;
+}
+.nav_home:hover{
+    color: black;
+    background-color: wheat;
+}
+.nav_contacts{
+    border: 1.5px solid wheat;
+    padding: 10px;
+    color: wheat;
+}
+.nav_contacts:hover{
+    color: black;
+    background-color: wheat;
+}
