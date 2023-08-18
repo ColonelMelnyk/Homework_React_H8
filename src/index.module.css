@@ -24,6 +24,7 @@ dd {
   margin: 0;
 }
 body {
+  font-family: 'Bricolage Grotesque', sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -41,4 +42,5 @@ ol[class] {
   font-size: 48px;
   margin-top: 350px;
   text-align: center;
+  font-weight: 700;
 }
