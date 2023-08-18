@@ -5,12 +5,10 @@ import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/authorisation/AuthOperations';
 import PrivateRoute from './Private';
 import PublicRoute from './Public';
-
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
 const ContactsPage = lazy(() => import('../pages/Contacts'));
-
 export const App = () => {
   const dispatch = useDispatch();
 

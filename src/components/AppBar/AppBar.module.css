@@ -2,6 +2,7 @@
     background-color: black;
     padding: 2px;
 }
+
 .header_section{
     display: flex;
     justify-content: space-between;
