@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import ContactsList from 'components/ContactsList/ContactsList';
 import { Loader } from 'components/Loader/Loader';
-import css from '../components/ContactList/ContactList.module.css'
+import css from 'components/ContactsList/ContactList.module.css'
 const Contacts = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
