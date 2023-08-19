@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { onHandleDeleteContact } from 'redux/contacts/Operations';
+import { deleteContact } from 'redux/contacts/Operations';
 import css from './FormItem.module.css'
 export const ContactItem = ({ contact }) => {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(onHandleDeleteContact(contact.id));
+  const handleDelete = () => dispatch(deleteContact(contact.id));
   return (
     <li className={css.list_member}>
       <div>
