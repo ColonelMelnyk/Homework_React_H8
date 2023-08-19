@@ -1,11 +1,11 @@
 import { Filter } from 'components/Filter/Filter';
-import { ContactForm } from 'components/ContactForm/ContactForm';
+import { ContactsForm } from 'components/ContactsForm/ContactsForm';
 import { useSelector } from 'react-redux';
 import { selectError, selectIsLoading } from 'redux/contacts/Selector';
 import { fetchContacts } from 'redux/contacts/Operations';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import ContactList from 'components/ContactList/ContactList';
+import ContactsList from 'components/ContactsList/ContactsList';
 import { Loader } from 'components/Loader/Loader';
 import css from '../components/ContactList/ContactList.module.css'
 const Contacts = () => {
@@ -19,11 +19,11 @@ const Contacts = () => {
 
   return (
     <section className={css.contact_form_container}>
-            <ContactForm />
+            <ContactsForm />
            <div className={css.contact_list_container}>
            <h2 >My contacts</h2>
             <Filter />
-            {isLoading && !error ? <Loader /> : <ContactList />}
+            {isLoading && !error ? <Loader /> : <ContactsList />}
            </div>
     </section>
   );
